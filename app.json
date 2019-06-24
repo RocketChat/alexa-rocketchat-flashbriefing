@@ -7,7 +7,7 @@
   "addons": ["heroku-redis:hobby-dev"],
   "env": {
     "SERVER_URL": {
-      "description": "Enter Your Rocket Chat Server URL"
+      "description": "Enter Your Rocket Chat Server URL. Ex- https://your.server.chat"
     },
     "CHANNEL_NAME": {
       "description": "Enter Your Broadcasting Channelname"
