@@ -9,8 +9,8 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
 
 # Repository Contents
 
-* `lambdaFunc.zip` - Deploy file for Lambda Functions consists of backend code and node modules.
-* `/src` - Back-End Logic for the Alexa Skill hosted on [AWS Lambda](https://aws.amazon.com/lambda/).
+* `index.js` - Back-End Logic for the Alexa Flash Briefing Skill hosted on [Heroku](https://www.heroku.com/)
+* `app.json` - It is a manifest format for describing web apps. It declares environment variables, add-ons, and other information required to run an app on Heroku.
 
 
 # Setup
@@ -18,7 +18,7 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
 ### Pre-requisites
 
 * Node.js (> v8.10)
-* Register for an [AWS Account](https://aws.amazon.com/)
+* Register for a [Heroku Account](https://www.heroku.com/)
 * Register for an [Amazon Developer Account](https://developer.amazon.com/)
 * Rocket Chat Server updated to Release 1.2.0-rc.0 or later.
 
@@ -28,12 +28,6 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
 
 **Note:** Requires Admin Access.
 
-### Getting Repository Contents
-
-* Clone The Repository,
-
-  `git clone https://github.com/PrajvalRaval/rocket-chat-flash-briefing.git`
-
 ### Creating Broadcast Channel
 
 * On Server Homepage click on **Create New** -> **Channel**
@@ -42,26 +36,21 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
 
 * Then give your **Channel Name**, and click on **Create**.
 
-### Creating Lambda Fucntion
+### Deploying Code
 
-* Go To [Lambda Management Console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-* Click on **Create Function**
+* **CACHE_TTL** : It is used by Redis to store your data for the given period of time. You may enter your desire frequency in seconds. For ex: If you are going to post news every 24 Hrs enter `86400`. Now your data will be updated every 24 hrs. This step helps admins to save cost as by caching data.
 
-* Choose **Author From Scratch** and fill in your **Function name**.
+* **CHANNEL_NAME** : Enter the name of the broadcasting channel we created earlier.
 
-* Make Sure Your **Runtime** is `> v8.10` and click on **Create Function**.
+* **REDIS_URL** : A Redis instance is automatically created when you deploy this app and its location is stored in this variable.
 
-* Now in **Function code**, choose **Upload A .zip file** and upload **lambdaFunc.zip** file and click **Save**.
+* **SERVER_URL** : Enter your current Rocket.Chat server url here.
 
-* Create Two Environment Variables and hit **Save**
-  
-  1. **SERVER_URL**    https://yourservername.rocket.chat
-	2. **CHANNELNAME**    (The name of the Broadcast Channel we created earlier, make sure its in lower case with no spaces)
-  
-* Add **API Gateway** Trigger. Select **Create A New API**, for security choose **Open** and then click on **Add**. Finally click **Save**.
+* **TITLE_TEXT** : The title of the feed item to display in the Alexa app.
 
-* We will be using **API endpoint** in the next step. You can also change skill title as per you need in code.
+* After App is deployed you can find your **API endpoint URL** here, **Manage App** -> **Settings** -> **Domains and certificates** -> **Domain**. We will using it in the next step.
 
 ### Creating Flash Briefing Skill
 
