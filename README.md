@@ -54,7 +54,7 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
   
   * **TITLE_TEXT** : The title of the feed item to display in the Alexa app.
 
-* After App is deployed you can find your **API endpoint URL** here, **Manage App** -> **Settings** -> **Domains and certificates** -> **Domain**. We will using it in the next step.
+* After App is deployed you can find your **API endpoint URL** here, **Manage App** -> **Settings** -> **Domains and certificates** -> **Domain**. We will using be using this URL in the next step.
 
 ### Creating Flash Briefing Skill
 
