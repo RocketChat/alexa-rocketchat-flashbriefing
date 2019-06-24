@@ -1,0 +1,26 @@
+{
+  "name": "Rocket Chat Flash Briefing",
+  "description": "A simple flash briefing app with Redis and Express.",
+  "repository": "https://github.com/PrajvalRaval/heroku-express-test",
+  "logo": "https://user-images.githubusercontent.com/41849970/60022912-625b3380-96b2-11e9-84ba-55cbd8617b42.png",
+  "keywords": ["node", "express", "static"],
+  "addons": ["heroku-redis:hobby-dev"],
+  "env": {
+    "SERVER_URL": {
+      "description": "Enter Your Rocket Chat Server URL"
+    },
+    "CHANNEL_NAME": {
+      "description": "Enter Your Broadcasting Channelname"
+    },
+    "CACHE_TTL": {
+      "description": "Data Update Frequency In Seconds. For example: If you want your data to be updated every 5 Minutes, enter 3600 "
+    },
+    "TITLE_TEXT": {
+      "description": "The title of the feed item to display in the Alexa app."
+    }, 
+    "REDIS_URL": {
+            "description": "Redis Database URL",
+            "generator": "secret"
+    }
+  }
+}
