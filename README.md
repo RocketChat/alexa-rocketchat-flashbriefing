@@ -7,18 +7,12 @@ Flash Briefing Skill - Powered By Rocket.Chat
 
 Deploy your Flash briefing skill in minutes using Rocket chat and broadcast messages on both channel and skill in realtime.
 
-# Repository Contents
-
-* `lambdaFunc.zip` - Deploy file for Lambda Functions consists of backend code and node modules.
-* `/src` - Back-End Logic for the Alexa Skill hosted on [AWS Lambda](https://aws.amazon.com/lambda/).
-
-
 # Setup
 
 ### Pre-requisites
 
 * Node.js (> v8.10)
-* Register for an [AWS Account](https://aws.amazon.com/)
+* A Standalone Server to deploy code.
 * Register for an [Amazon Developer Account](https://developer.amazon.com/)
 * Rocket Chat Server updated to Release 1.2.0-rc.0 or later.
 
@@ -28,12 +22,6 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
 
 **Note:** Requires Admin Access.
 
-### Getting Repository Contents
-
-* Clone The Repository,
-
-  `git clone https://github.com/PrajvalRaval/rocket-chat-flash-briefing.git`
-
 ### Creating Broadcast Channel
 
 * On Server Homepage click on **Create New** -> **Channel**
@@ -42,26 +30,25 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
 
 * Then give your **Channel Name**, and click on **Create**.
 
-### Creating Lambda Fucntion
+### Deploying Code
 
-* Go To [Lambda Management Console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions)
+* Get Repository Contents using the following command:
+   
+   `git clone https://github.com/PrajvalRaval/rc-flashbriefing-server.git`
+   
+* After cloning create a **.env** file with following environment variables:
 
-* Click on **Create Function**
-
-* Choose **Author From Scratch** and fill in your **Function name**.
-
-* Make Sure Your **Runtime** is `> v8.10` and click on **Create Function**.
-
-* Now in **Function code**, choose **Upload A .zip file** and upload **lambdaFunc.zip** file and click **Save**.
-
-* Create Two Environment Variables and hit **Save**
+  * **PORT** : Enter The Port number you want server to run on.
   
-  1. **SERVER_URL**    https://yourservername.rocket.chat
-	2. **CHANNELNAME**    (The name of the Broadcast Channel we created earlier, make sure its in lower case with no spaces)
-  
-* Add **API Gateway** Trigger. Select **Create A New API**, for security choose **Open** and then click on **Add**. Finally click **Save**.
+  * **CHANNEL_NAME** : Enter the name of the broadcasting channel we created earlier. Make sure its in lower case with no spaces.
 
-* We will be using **API endpoint** in the next step. You can also change skill title as per you need in code.
+  * **SERVER_URL** : Enter your current Rocket.Chat server url here. Ex- https://your.sever.chat
+
+* Change **cacheTimeout** & **flashBriefingTitle** from **index.js** as per your requirement.
+
+* Deploy the code to the server of your choice.
+
+* After App is deployed we will be using **URL/Domain** of the server in the next step.
 
 ### Creating Flash Briefing Skill
 
@@ -73,7 +60,7 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
 
 * Choose **Content type** as **Text**.
 
-* In **Feed**, paste the **API endpoint URL**.
+* In **Feed**, paste the **URL/Domain**.
 
 * Upload Photo and hit **Add**.
 
@@ -83,7 +70,5 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
 
 Need community help in the following:
 
-* externalize it to a nodeJS server, to handle "hundreds of flash briefings across hundreds of RCs" for millions of users - reduce Lamda cost and create  "flash breifing publishing as a service"
-* add caching to significantly reduce lambda cost 
 * add a conversation flow to allow an admin to "publish the briefing" daily using the VUI
 * add support for audio content for more personal flash breifing delivery
