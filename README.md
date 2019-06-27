@@ -81,4 +81,3 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
 Need community help in the following:
 
 * add a conversation flow to allow an admin to "publish the briefing" daily using the VUI
-* add support for audio content for more personal flash breifing delivery
