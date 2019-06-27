@@ -14,6 +14,7 @@ app.use(express.static('dist'))
 
 const PORT = process.env.PORT || 3000;
 const serverurl = process.env.SERVER_URL;
+const fbserverurl = process.env.FBSERVER_URL;
 const channelName = process.env.CHANNEL_NAME;
 const userName = process.env.USER_NAME;
 const passWord = process.env.PASSWORD;
@@ -134,7 +135,7 @@ app.get('/', async (req, res) => {
             updateDate: response.data.messages[0].ts,
             titleText: flashBriefingTitle,
             mainText: response.data.messages[0].msg,
-            streamUrl: `https://${req.headers.host}/download`,
+            streamUrl: `https://${fbserverurl}/download`,
             redirectionUrl: `${ serverurl }/channel/${ channelName }`
           });
 
