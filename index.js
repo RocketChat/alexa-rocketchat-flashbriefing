@@ -1,9 +1,10 @@
 const express = require("express");
 const axios = require('axios');
 const app = express();
-var cache = require('memory-cache');
+const cache = require('memory-cache');
 const fs = require('fs');
 const download = require('download');
+
 require('dotenv').config();
 
 app.use(express.json());
