@@ -12,8 +12,9 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
 ### Pre-requisites
 
 * Node.js (> v8.10)
-* Rocket Chat Server updated to Release 1.2.0-rc.0 or later.
+* A Standalone Server to deploy code.
 * Register for an [Amazon Developer Account](https://developer.amazon.com/)
+* Rocket Chat Server updated to Release 1.2.0-rc.0 or later.
 
 ### Enabling Anonymous Read
 
@@ -31,8 +32,6 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
 
 ### Deploying Code
 
-* It should work with any server capable of running a nodejs app with express.
-
 * Get Repository Contents using the following command:
    
    `git clone https://github.com/PrajvalRaval/rc-flashbriefing-server.git`
@@ -44,6 +43,10 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
   * **CHANNEL_NAME** : Enter the name of the broadcasting channel we created earlier. Make sure its in lower case with no spaces.
 
   * **SERVER_URL** : Enter your current Rocket.Chat server url here. Ex- https://your.sever.chat
+  
+  * **USER_NAME** : Enter your Rocket.Chat username.
+  
+  * **PASSWORD** : Enter your Rocket.chat password.
 
 * Change **cacheTimeout** & **flashBriefingTitle** from **index.js** as per your requirement.
 
