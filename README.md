@@ -58,7 +58,7 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
 
 * You can test your server by sending `/ping` or `/download` request.
 
-* After App is deployed we will be using **URL/Domain** of the server in the next step.
+* After App is deployed we will be using **URL/Domain** of the server in the next step. Make sure it's an **HTTPS** url.
 
 ### Creating Flash Briefing Skill
 
