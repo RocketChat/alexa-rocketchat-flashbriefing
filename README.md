@@ -43,7 +43,7 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
 
   * **SERVER_URL** : Enter your current Rocket.Chat server url here. Ex- https://your.sever.chat
   
-  * **FBSERVER_URL** : Enter your the server URL where this node app is deploy.
+  * **FBSERVER_URL** : Enter your the Hostname where this node app is deploy. Ex- If your server is deployed on `https://your.sever.chat` use only `your.sever.chat`.
   
   * **USER_NAME** : Enter your Rocket.Chat username.
   
