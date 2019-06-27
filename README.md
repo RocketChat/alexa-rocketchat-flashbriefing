@@ -76,6 +76,12 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
 
 * Click on **Save** and that should complete the complete the process.
 
+## Usage
+
+* Flash briefing will use the **last message** on the broadcast channel for broadcasting.
+
+* Make sure that the last message is either a **text message** or **audio message** and not other file types such as *images or videos*.
+
 # TODOs
 
 Need community help in the following:
