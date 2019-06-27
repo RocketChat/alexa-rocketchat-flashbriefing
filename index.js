@@ -97,7 +97,7 @@ app.get('/ping', (req, res) => {
 
   const pongData = ('{"data":"PONG"}');
   var pong = JSON.parse(pongData);
-  return res.status(200).json(pong);
+  return res.status(200).send(pong);
 
 })
 
@@ -110,7 +110,7 @@ app.get('/', async (req, res) => {
     console.log('Using Cached Data From Memory');
 
     const resultJSON = JSON.parse(cache.get('message'));
-    return res.status(200).json(resultJSON);
+    return res.status(200).send(resultJSON);
 
   } else {
 
@@ -142,11 +142,11 @@ app.get('/', async (req, res) => {
           cache.put('message', responseJSON, cacheTimeout);
 
           const result = JSON.parse(responseJSON);
-          return res.status(200).json(result);
+          return res.status(200).send(result);
         })
         .catch(err => {
           console.log(err);
-          return res.status(200).json(err);
+          return res.status(200).send(err);
         });
 
     } else {
@@ -167,11 +167,11 @@ app.get('/', async (req, res) => {
           cache.put('message', responseJSON, cacheTimeout);
 
           const result = JSON.parse(responseJSON);
-          return res.status(200).json(result);
+          return res.status(200).send(result);
         })
         .catch(err => {
           console.log(err);
-          return res.status(200).json(err);
+          return res.status(200).send(err);
         });
     }
 
