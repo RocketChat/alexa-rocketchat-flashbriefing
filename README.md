@@ -50,7 +50,13 @@ Deploy your Flash briefing skill in minutes using Rocket chat and broadcast mess
 
 * Change **cacheTimeout** & **flashBriefingTitle** from **index.js** as per your requirement.
 
-* Deploy the code to the server of your choice.
+  * **cacheTimeout** : It is the frequency of your message update. For example if you want your flash briefing to update data every hour then set the value of cacheTimeout to `3600000` i.e one hour in milliseconds.
+  
+  * **flashBriefingTitle** : The title of the feed item to display in the Alexa app.
+
+* Deploy the code to the server of your choice along.
+
+* You can test your server by sending `/ping` or `/download` request.
 
 * After App is deployed we will be using **URL/Domain** of the server in the next step.
 
